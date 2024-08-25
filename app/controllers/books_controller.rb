@@ -21,7 +21,7 @@ class BooksController < ApplicationController
 
   # POST /books or /books.json
   def create
-    @book = Book.new(book_params)
+    @book = Book.new(book_params) # モデルを利用している部分
 
     respond_to do |format|
       if @book.save
@@ -68,6 +68,6 @@ class BooksController < ApplicationController
       # StrongParameters
       # bookのtitle,memoだけを受け取るように制限する
       # 攻撃者によるパラメータ改竄防止ができる
-      params.require(:book).permit(:title, :memo)
+      params.require(:book).permit(:title, :memo, :author)
     end
 end
