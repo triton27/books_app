@@ -68,6 +68,6 @@ class BooksController < ApplicationController
       # StrongParameters
       # bookのtitle,memoだけを受け取るように制限する
       # 攻撃者によるパラメータ改竄防止ができる
-      params.require(:book).permit(:title, :memo, :author)
+      params.require(:book).permit(:title, :memo, :author, :picture)
     end
 end
