@@ -65,9 +65,6 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      # StrongParameters
-      # bookのtitle,memoだけを受け取るように制限する
-      # 攻撃者によるパラメータ改竄防止ができる
       params.require(:book).permit(:title, :memo, :author, :picture)
     end
 end
